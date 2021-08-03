@@ -1,14 +1,24 @@
 from turtle import distance, forward, penup, pendown, exitonclick, left, right
-# plástve
+#Plástve
 
 def pla(ds):
-    #ds je číslo udávající délku strany v jednotkách želvy (pixel?)
+    #ds je číslo udávající délku strany v jednotkách želvy (pixelech?)
     for i in range(6):
         forward(ds)
         left(60)
 
-#2 kruhy pláství (3 vrstvy)
-ds=40
+#n vrstev pláství
+while True:
+    lr = int(input('Zadej počet vrstev pláství. (Celé nezáporné číslo.)'))
+    ds = 40
+
+    if lr < 0:
+        print('Počet vrstev musí být celé nezáporné číslo.')
+    else:
+        break
+
+#for i in range(lr):
+
 pla(ds)
 
 forward(ds)
