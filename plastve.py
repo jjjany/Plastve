@@ -1,45 +1,25 @@
-# Plástev
-from turtle import shape, forward, left, right, exitonclick, penup, pendown
+from turtle import distance, forward, penup, pendown, exitonclick, left, right
+# plástve
 
-shape('turtle')
-right(60)
-for i in range(6):
-    forward(50)
-    left(60)
+def pla(ds):
+    #ds je číslo udávající délku strany v jednotkách želvy (pixel?)
+    for i in range(6):
+        forward(ds)
+        left(60)
 
-right(120)
+#6 pláství v kruhu
+ds=40
+pla(ds)
 
-for i in range(6):
-    penup()
-    forward(50)
-    pendown()
-    right(60)    
-    for i in range(4):
-        forward(50)
-        right(60)
-    right(120)
-
-penup()
-forward(50)
-right(60)
-forward(50)
+forward(ds)
 left(60)
-forward(50)
+forward(ds)
+right(60)
 
-for i in range(6):
-    pendown()
-    for i in range(4):
-        right(60)
-        forward(50)    
-    right(180)
-    penup()
-    forward(50)
-    pendown()
-    for i in range(3):
-        right(60)
-        forward(50)
-    right(180)
-    penup()
-    forward(50)
-    
+for i in range(5):
+    pla(ds)
+
+    forward(ds)
+    right(60)
+
 exitonclick()
