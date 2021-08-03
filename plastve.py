@@ -7,7 +7,7 @@ def pla(ds):
         forward(ds)
         left(60)
 
-#6 pláství v kruhu
+#2 kruhy pláství (3 vrstvy)
 ds=40
 pla(ds)
 
@@ -21,5 +21,23 @@ for i in range(5):
 
     forward(ds)
     right(60)
+
+left(120)
+forward(ds)
+right(60)
+
+for i in range(6):
+    for i in range(2):
+        pla(ds)
+        forward(ds)
+        right(60)
+
+    forward(ds)
+    left(60)
+
+forward(ds)
+left(60)
+forward(ds)
+right(60)
 
 exitonclick()
