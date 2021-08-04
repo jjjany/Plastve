@@ -29,13 +29,31 @@ def pla_lrn(lr):  # tato funkce nakreslí n-tou vrstvu pláství pro n>=1
         forward(ds)
         left(60)
 
+while True:
+    odkud_kreslit = str(input('Mám jednotlivé vrstvy plástve začít kreslit od středu? (a/n)'))
 
-for i in range(lr):
-    pla_lrn(lr-i)
-    left(120)
-    forward(ds)
-    right(60)
-    forward(ds)
-    right(60)
+    if odkud_kreslit == 'a' or odkud_kreslit == 'A':
+        for i in range(lr):  # jednotlivé vrstvy kreslí od středu k povrchu
+            pla_lrn(i+1)
+            right(120)
+            penup()
+            forward(ds)
+            left(60)
+            forward(ds)
+            pendown()
+            left(60)
+        break
+
+    elif odkud_kreslit == 'n' or odkud_kreslit == 'N':
+        for i in range(lr):  # jednotlivé vrstvy kreslím od povrchu ke středu
+            pla_lrn(lr-i)
+            left(120)
+            forward(ds)
+            right(60)
+            forward(ds)
+            right(60)
+        break
+    else:
+        print('Nerozumím. Odpověz buď "a" jako ano, nebo "n" jako ne.')
 
 exitonclick()
