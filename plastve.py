@@ -3,15 +3,18 @@ from turtle import distance, forward, penup, pendown, exitonclick, left, right
 # n vrstev pláství
 
 while True:
-    lr = int(input('Zadej počet vrstev pláství. (Celé nezáporné číslo.)'))
+    
     ds = 15  # ds je číslo udávající délku strany v jednotkách želvy (pixelech?)
-
-    if lr < 0:
-        print('Počet vrstev musí být celé nezáporné číslo.')
-    elif lr == 0:
-        print('Není, co kreslit.')
-    else:
-        break
+    try:
+        lr = int(input('Zadej počet vrstev pláství. (Celé nezáporné číslo.)'))
+        if lr < 0:
+            print('Počet vrstev musí být celé nezáporné číslo.')
+        elif lr == 0:
+            print('Není, co kreslit.')
+        else:
+            break
+    except ValueError:
+        print('To nebylo celé nezáporné číslo!')
 
 def pla(ds):  # tato funkce nakreslí právě 1 vrstvu pláství, tj. 1 plástev (šestiúhelník) o délce strany ds
     for i in range(6):
